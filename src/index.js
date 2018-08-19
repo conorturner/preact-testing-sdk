@@ -1,4 +1,5 @@
 import { h, render } from "preact";
+
 // import chai, { expect } from "chai";
 
 export class Mount {
@@ -10,12 +11,13 @@ export class Mount {
 	}
 
 	find(query) {
-		return this.scratch.querySelector(query);
+		return this.scratch.querySelectorAll(query);
 	}
 
 	fireEvent(query, type) {
 		let e = document.createEvent("Event");
 		e.initEvent(type, true, true);
-		this.find(query).dispatchEvent(e);
+		if (typeof query === "string") this.find(query)[0].dispatchEvent(e);
+		else query.dispatchEvent(e);
 	}
 }
