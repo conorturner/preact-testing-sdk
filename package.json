@@ -1,6 +1,6 @@
 {
   "name": "preact-testing-sdk",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Preact testing framework bundled with preact testing dependencies.",
   "main": "dist/main.min.js",
   "module": "dist/main.min.js",
